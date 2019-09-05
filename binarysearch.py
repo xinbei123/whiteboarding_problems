@@ -14,6 +14,9 @@ of 1-100, this should never be more than 7.
 
     >>> binary_search(75)
     2
+
+   >>> binary_search(31)
+   4
    
 """
 
@@ -32,7 +35,7 @@ def binary_search(val):
 
         num_guesses += 1
 
-        guess = (lower + higher) / 2
+        guess = (lower + higher) // 2
 
         if guess < val:
 
