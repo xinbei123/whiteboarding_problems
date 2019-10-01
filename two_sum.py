@@ -27,9 +27,9 @@ class Solution(object):
                 if sum == target:
                     return [i, j]
 
-        # Linear runtime solution using hashmap
+        # Linear runtime solution using hashmap, complement can't be nums[i] 
+        # iteself
        
-        
         hash_map = {}
         
         for i in range(len(nums)):
