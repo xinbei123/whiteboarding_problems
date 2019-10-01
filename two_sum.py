@@ -28,15 +28,21 @@ class Solution(object):
                     return [i, j]
 
         # Linear runtime solution using hashmap
-        # 9 - 2 = 7 -> {7:0}
-        # 9 - 7 = 2 -> {7:0, 2:1}
-        # return nums[i], i
+       
         
-        temp = dict()
+        hash_map = {}
         
         for i in range(len(nums)):
-            if nums[i] in temp:
-                return [temp[nums[i]],i]
-            else:
-                temp[target-nums[i]] = i
+            hash_map[nums[i]] = i
+            
+        for i in range(len(nums)):
+            complement = target - nums[i]
+            if complement in hash_map:
+                if hash_map[complement] != i:
+                    return [i, hash_map[complement]]
+        return []
+
+
+
+
                 
