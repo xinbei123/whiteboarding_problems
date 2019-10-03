@@ -23,11 +23,5 @@ class Solution(object):
         return x == reverted or x == reverted / 10
 
 
-        
-
-
-
-
-
         # convert num to str
         return str(x) == str(x)[::-1]
