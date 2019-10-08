@@ -28,7 +28,7 @@ class Solution(object):
                     return [i, j]
 
         # Linear runtime solution using hashmap, complement can't be nums[i] 
-        # iteself
+        # itself
        
         hash_map = {}
         
