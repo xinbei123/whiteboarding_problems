@@ -10,6 +10,7 @@
 #         self.val = x
 #         self.next = None
 
+# hashmap solution, O(n) time complexity vs O(n) space complexity
 class Solution(object):
     def hasCycle(self, head):
         
@@ -20,7 +21,28 @@ class Solution(object):
                 return True
             else:
                 hash_map[head] = hash_map.get(head,0) + 1
-                
+
             head = head.next
 
         return False
+
+# two pointer solution, O(n) time complexity vs O(1) space complexity
+ def hasCycle(self, head):
+        
+        if head is None:
+            return False
+        
+        slow = head
+        fast = head.next
+        
+        while slow is not None and fast is not None and fast.next is not None:
+            if slow == fast:
+                return True
+            
+            slow = slow.next
+            fast = fast.next.next
+        
+        return False
+
+
+        
